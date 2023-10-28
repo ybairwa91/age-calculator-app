@@ -1,3 +1,6 @@
+# Frontendmentor.io challange
+ This is a solution to challange posted at [Frontendmentor.io](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q/hub) Solved by Yogesh Kumar Bairwa.
+
 # Project Title
  - One Click Age Calculator
 
@@ -18,4 +21,10 @@
 # What i learnt
   - javascript new date() object and various methods like .getFullYear() .getMonth() .getDate()
   - learn right property in CSS
-  - -learnt margin can take negative value ,which helped to adjust my button
+  - learnt that margin can also take negative value ,which helped met to adjust my button in later run.
+
+# Demo
+  - [Click here to open website](https://oneclickagecalc.netlify.app/)
+
+# Visuals
+  ![image](https://github.com/ybairwa91/age-calculator-app/assets/38151247/3c99d5de-14c1-4bbe-86fb-751fdde874de)
