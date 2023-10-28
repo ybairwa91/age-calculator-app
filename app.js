@@ -1,28 +1,96 @@
-// create date objects
+const btn = document.getElementById("btn");
 
-const d = new Date();
-console.log(d); //created date
-//==Thu Oct 26 2023 09:10:04 GMT+0530 (India Standard Time)
-//
-console.log(d.getFullYear()); //gives only year==2-023
+let flag;
+const findAge = function () {
+  flag = 1;
+  const dayDob = Number(document.getElementById("blankOne").value);
+  const monthDob = Number(document.getElementById("blankTwo").value);
+  const yearDob = Number(document.getElementById("blankThree").value);
 
-// new Date()
-/*
-new Date(date string)
+  if (dayDob === isNaN || monthDob === isNaN || yearDob === isNaN) {
+    flag = 0;
+  }
+  if (
+    dayDob === Number(" ") ||
+    monthDob === Number(" ") ||
+    yearDob === Number(" ")
+  ) {
+    flag = 0;
+  }
 
-new Date(year,month)
-new Date(year,month,day)
-new Date(year,month,day,hours)
-new Date(year,month,day,hours,minutes)
-new Date(year,month,day,hours,minutes,seconds)
-new Date(year,month,day,hours,minutes,seconds,ms)
+  if (dayDob > 31 || monthDob > 12 || yearDob > 2023) {
+    flag = 0;
+  }
+  if (yearDob % 400 === 0) {
+    //concept of feb 29 in leapyearDob
+    if (monthDob === 2) {
+      if (dayDob === 29) {
+        flag = 0;
+      }
+    }
+  }
 
-new Date(milliseconds)
+  //showing error when dayDobs are wrong in alternate monthDobs
+  if (
+    monthDob === 2 ||
+    monthDob === 4 ||
+    monthDob === 6 ||
+    monthDob === 9 ||
+    monthDob === 11
+  ) {
+    if (dayDob === 31) {
+      flag = 0;
+    }
+  }
+  //when feb is 30
+  if (monthDob === 2) {
+    if (dayDob === 30) {
+      flag = 0;
+    }
+  }
 
-*/
+  //now change -- into values
 
-const e = new Date("oct 11,2011,11:11:11");
+  if (flag === 1) {
+    const dob = new Date(yearDob, monthDob - 1, dayDob);
+    let dobYear = dob.getFullYear();
+    let dobMonth = dob.getMonth();
+    let dobDate = dob.getDate();
+    console.log(dobYear, dobMonth, dobDate);
+    const current = new Date();
+    let currentYear = current.getFullYear();
+    let currentMonth = current.getMonth();
+    let currentDate = current.getDate();
 
-console.log(e);
+    console.log(currentYear, currentMonth, currentDate);
 
-console.log(new Date(2018, 11, 24, 10, 33, 30, 0));
+    let ageYear = currentYear - dobYear;
+    console.log(ageYear);
+    let ageMonth = currentMonth - dobMonth;
+    console.log(ageMonth);
+    let ageDate = currentDate - dobDate;
+    console.log(ageDate);
+
+    let yearSpace = document.getElementById("yearValue");
+    let monthSpace = document.getElementById("monthValue");
+    let dateSpace = document.getElementById("dateValue");
+
+    yearSpace.innerHTML = ageYear;
+    monthSpace.innerHTML = ageMonth;
+    dateSpace.innerHTML = ageDate;
+  } else {
+    document.getElementById("errorYear").innerHTML = "must contain valid Year";
+    document.getElementById("errorDay").innerHTML = "must contain valid Day";
+    document.getElementById("errorMonth").innerHTML =
+      "must contain valid Month";
+
+    document.getElementById("blankOne").style.border =
+      "1px solid hsl(0, 100%, 67%)";
+    document.getElementById("blankTwo").style.border =
+      "1px solid hsl(0, 100%, 67%)";
+    document.getElementById("blankThree").style.border =
+      "1px solid hsl(0, 100%, 67%)";
+  }
+};
+
+btn.addEventListener("click", findAge);
