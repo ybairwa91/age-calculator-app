@@ -1,5 +1,5 @@
 # Frontendmentor.io challange
- This is a solution to challange posted at [Frontendmentor.io](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q/hub) Solved by Yogesh Kumar Bairwa.
+ * This is a solution to challange posted at [Frontendmentor.io](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q/hub) Solved by Yogesh Kumar Bairwa.
 
 # Project Title
  - One Click Age Calculator
