@@ -15,7 +15,7 @@
 # Built with help of
   - [Bootstrap-a javascript framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
-# What i leanrt
+# What i learnt
   - javascript new date() object and various methods like .getFullYear() .getMonth() .getDate()
   - learn right property in CSS
   - -learnt margin can take negative value ,which helped to adjust my button
